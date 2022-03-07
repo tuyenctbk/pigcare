@@ -1,0 +1,21 @@
+{
+  "@@locale": "en",
+  "appName": "Pig Farm",
+  "initializing": "loading...",
+  "retry":"Retry",
+  "ranging": "ranging",
+  "notRanging": "not Ranging",
+  "startObserve": "Start observe",
+  "stopObserve": "Stop",
+  "id": "PigId: {id}",
+  "temperature": "Temperature: {t}°C",
+  "setting": "Setting",
+  "warningLevelSetting": "Warning level setting",
+  "guideWarningInput": "Please make sure Alert low temperature level is smaller than Alert high temperature level",
+  "dangerLowAt": "Alert when temperature below:",
+  "dangerHighAt": "Alert when temperature above:",
+  "showAsGrid": "Show as grid",
+  "showAsList": "Show as list",
+  "save": "save",
+  "notScanning":"Stopped scanning. Please make sure that \nBluetooth and Location features are enabled. \nThen press Start observe again"
+}
