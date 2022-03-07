@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pig_care/l10n/l10n.dart';
-import 'package:pig_care/src/model/warning_config.dart';
 import 'package:pig_care/src/provider/shared_data_provider.dart';
 
 class WarningSettingScreen extends StatefulWidget {
@@ -34,7 +33,7 @@ class _WarningSettingScreenState extends State<WarningSettingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = TextStyle(fontSize: 17, color: Colors.black);
+    final textStyle =  TextStyle(fontSize: 17, color: Colors.black);
     sharedDataProvider = RepositoryProvider.of<SharedDataProvider>(context);
     return Scaffold(
       appBar: AppBar(
@@ -48,7 +47,7 @@ class _WarningSettingScreenState extends State<WarningSettingScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Text(
@@ -66,7 +65,7 @@ class _WarningSettingScreenState extends State<WarningSettingScreen> {
                     L10n.current.dangerLowAt,
                     style: textStyle.copyWith(color: Colors.red),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   SizedBox(
                     width: 80,
                     child: TextField(

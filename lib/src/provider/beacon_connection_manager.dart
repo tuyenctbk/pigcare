@@ -53,12 +53,14 @@ class BeaconConnectionManager {
       // android platform, it can ranging out of beacon that filter all of Proximity UUID
       if (regions.isEmpty) {
         regions.add(
-          Region(identifier: 'com.beacon', proximityUUID:'01122334-4556-6778-899A-ABBCCDDEEFF0'),
+          Region(
+              identifier: 'com.beacon',
+              proximityUUID: '01122334-4556-6778-899A-ABBCCDDEEFF0'),
         );
       }
     }
 
-    if(usingMockData){
+    if (usingMockData) {
       sharedDataProvider.pigStatusHistories.value = [];
       sharedDataProvider.pigStatuses.value = [];
 // to start ranging beacons

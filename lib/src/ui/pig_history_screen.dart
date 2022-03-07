@@ -31,27 +31,28 @@ class PigHistoryScreen extends StatelessWidget {
       ),
       body: Container(
         color: Colors.white,
-        padding:const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         child: ValueListenableBuilder<List<PigStatus>>(
           valueListenable: sharedDataProvider.pigStatusHistories,
           builder: (context, value, _) {
-
-            final list = value.where((element) => element.id == info.id).toList();
+            final list =
+                value.where((element) => element.id == info.id).toList();
             return ListView.separated(
                 itemBuilder: (context, index) => Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      L10n.current.temperature(list[index].temperature),
-                      style: TextStyle(color: Colors.black, fontSize: 18),
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          L10n.current.temperature(list[index].temperature),
+                          style: TextStyle(color: Colors.black, fontSize: 18),
+                        ),
+                        Spacer(),
+                        Text(list[index].getLastUpdateTime(
+                            now: DateTime.now(), detail: true))
+                      ],
                     ),
-                    Spacer(),
-                    Text(list[index].getLastUpdateTime(now: DateTime.now(), detail: true))
-                  ],
-                ),
                 separatorBuilder: (context, index) => SizedBox(
-                  height: 1,
-                ),
+                      height: 1,
+                    ),
                 itemCount: list.length);
           },
         ),

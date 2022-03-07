@@ -78,8 +78,9 @@ class SharedDataProvider {
       map.putIfAbsent(
         element.id,
         () => element.copyWith(
-            config: commonConfig ?? element.config,
-            temperature: element.temperature,),
+          config: commonConfig ?? element.config,
+          temperature: element.temperature,
+        ),
       );
     }
     pigStatuses.value = map.values.toList()

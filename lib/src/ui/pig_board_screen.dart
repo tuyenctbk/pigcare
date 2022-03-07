@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,6 +14,7 @@ import 'package:pig_care/src/provider/shared_data_provider.dart';
 import 'package:visibility_aware_state/visibility_aware_state.dart';
 
 import 'pig_detail_screen.dart';
+import 'thermal_preview_screen.dart';
 
 class PigBoardScreen extends StatefulWidget {
   const PigBoardScreen({Key? key}) : super(key: key);
@@ -22,8 +24,7 @@ class PigBoardScreen extends StatefulWidget {
 }
 
 class _PigBoardScreenState extends VisibilityAwareState<PigBoardScreen> {
-
-   late final platform = const MethodChannel('com.onesys.pigcare');
+  late final platform = const MethodChannel('com.onesys.pigcare');
 
   late double _itemWidth;
   var _showAlarmOnly = false;
@@ -150,9 +151,16 @@ class _PigBoardScreenState extends VisibilityAwareState<PigBoardScreen> {
                         //   _showingAsListView = !_showingAsListView;
                         // });
                         _sharedDataProvider.mayReload = true;
-                        await platform.invokeMethod('openThermalCamera');
-                        // Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        //     builder: (setting) => ThermalPreviewScreen()));
+                        if (Platform.isAndroid) {
+                          await platform.invokeMethod('openThermalCamera');
+                        } else {
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                              builder: (setting) =>
+                                  const ThermalPreviewScreen(),
+                            ),
+                          );
+                        }
                       },
                       icon: Image.asset(
                         'assets/images/ic_thermal.png',

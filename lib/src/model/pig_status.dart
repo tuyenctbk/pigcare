@@ -51,7 +51,8 @@ class PigStatus with _$PigStatus {
     int hour = lastUpdate.hour;
     int second = lastUpdate.second;
 
-    String atTime = '${hour > 9 ? hour : '0$hour'}:${min > 9 ? min : '$min'}:${second > 9 ? second:'0$second'}';
+    String atTime =
+        '${hour > 9 ? hour : '0$hour'}:${min > 9 ? min : '$min'}:${second > 9 ? second : '0$second'}';
     // if(day ==1 ){
     //   return L10n.current.yesterday;
     // }

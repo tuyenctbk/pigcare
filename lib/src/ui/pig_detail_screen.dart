@@ -91,6 +91,7 @@ class PigDetailScreen extends StatelessWidget {
                 ]),
               ),
               _spacer1,
+
               /// Location
               RichText(
                 text: TextSpan(style: _style, children: [
