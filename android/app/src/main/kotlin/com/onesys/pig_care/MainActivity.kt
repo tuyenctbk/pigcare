@@ -15,7 +15,7 @@ class MainActivity: FlutterActivity() {
                 call, result ->
             if (call.method == "openThermalCamera") {
                 // start thermal Activity
-                startActivity(Intent(this, ThermalCameraActivity::class.java))
+                startActivity(Intent(this, SimpleActivity::class.java))
 //                Intent(this, DisplayMessageActivity::class.java)
             } else {
                 result.notImplemented()
