@@ -266,6 +266,7 @@ class _PigBoardScreenState extends VisibilityAwareState<PigBoardScreen> {
                               crossAxisSpacing: 6,
                               mainAxisSpacing: 4,
                               crossAxisCount: 2,
+                              childAspectRatio: 0.95,
                               children: List.generate(
                                 filtered.length,
                                 (index) => _buildPigStatusGridItem(
@@ -312,7 +313,7 @@ class _PigBoardScreenState extends VisibilityAwareState<PigBoardScreen> {
         onTap: () => _openPigDetail(pigStatus.id),
         child: SizedBox(
           width: _itemWidth,
-          height: 70,
+          height: 80,
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 3),
             child: Column(
