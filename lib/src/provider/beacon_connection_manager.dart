@@ -11,7 +11,7 @@ class BeaconConnectionManager {
 
   late StreamSubscription<MonitoringResult> _streamMonitoring;
 
-  bool usingMockData = true;
+  bool usingMockData = false;
 
   BeaconConnectionManager._internal(
       this.flutterBeacon, this.sharedDataProvider);
